@@ -33,7 +33,7 @@ fi
 #echo "**** TEMPLATE ****"
 #cat /nginx.tmpl
 echo "**** Start CONFIG ****"
-cat /etc/nginx/nginx.conf
+cat -n /etc/nginx/nginx.conf
 echo "**** End CONFIG ****"
 echo "* Starting nginx now..."
 nginx
