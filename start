@@ -2,7 +2,7 @@
 
 # let's encrypt
 #     https://gist.github.com/renchap/c093702f06df69ba5cac
-DOMAINS=${SERVER_NAME}
+DOMAINS=${SERVERNAME}
 # https://eblog.damia.net/2015/12/03/lets-encrypt-automation-on-debian/
 if [ ! -f "/etc/letsencrypt/live/${SERVER_NAME}/fullchain.pem" ]; then
      /certbot-master/letsencrypt-auto certonly -a standalone ${TEST_CERT} --standalone-supported-challenges http-01 -d ${DOMAINS} --email ${NOTIFICATION_EMAIL} --agree-tos
