@@ -11,6 +11,8 @@ COPY start /start
 RUN chmod +x /start
 
 COPY nginx.tmpl /nginx.tmpl
+COPY ssl.tmpl /ssl.tmpl
+COPY locations.tmpl /locations.tmpl
 CMD /start
 
 COPY env2json.py /env2json.py
