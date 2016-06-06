@@ -5,7 +5,7 @@
 DOMAINS=${SERVER_NAME}
 # https://eblog.damia.net/2015/12/03/lets-encrypt-automation-on-debian/
 if [ ! -f "/etc/letsencrypt/live/${SERVER_NAME}/fullchain.pem" ]; then
-     /letsencrypt-master/letsencrypt-auto certonly -a standalone ${TEST_CERT} --standalone-supported-challenges http-01 -d ${DOMAINS} --email ${NOTIFICATION_EMAIL} --agree-tos
+    /certbot-master/letsencrypt-auto certonly -a standalone ${TEST_CERT} --standalone-supported-challenges http-01 -d ${DOMAINS} --email ${NOTIFICATION_EMAIL} --agree-tos
      echo "* ! let's encrypted ... !"
 else
      echo "* Certificate does already exist"
