@@ -1,7 +1,8 @@
 # docker-nginx-rp
 
-## Example docker-compose.yml
 ## SSL
+
+`philipsahli/nginx-rp` does generate certificates from Let's Encrypt.
 
 ## Singlemode
 
@@ -24,6 +25,8 @@
         - /var/certs/`FQQN`:/etc/letsencrypt/
 
 ## Multimode
+
+Multimode means that we want to proxy multiple virtualhosts.
 
 ### docker-compose
 
