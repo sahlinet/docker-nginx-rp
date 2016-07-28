@@ -10,13 +10,13 @@ check_var=VHOST_${cnt}_SERVERNAME
 while [ ! x"${!check_var}" == "x" ]; do
     ssl=VHOST_${cnt}_SSL
     if [ "${!ssl}" == "True" ]; then
-        echo "* Process SSL for {!check_var}"
+        echo "* Process SSL for ${check_var}"
 
         servername=VHOST_${cnt}_SERVERNAME
         domains=VHOST_${cnt}_DOMAINS
 
         if [ ! -f "/etc/letsencrypt/live/${!servername}/fullchain.pem" ]; then
-            /certbot-master/letsencrypt-auto certonly -a standalone ${TEST_CERT} --standalone-supported-challenges http-01 -d ${!domains} --email ${NOTIFICATION_EMAIL} --agree-tos
+            /certbot-master/letsencrypt-auto certonly -a standalone ${TEST_CERT} --standalone-supported-challenges http-01 -d ${domains} --email ${NOTIFICATION_EMAIL} --agree-tos
             echo "* ! let's encrypted ... !"
             else
             echo "* Certificate does already exist"
