@@ -17,8 +17,3 @@ deployment:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
       - docker tag nginx-rp philipsahli/nginx-rp:latest
       - echo y | docker push philipsahli/nginx-rp:latest
-    branch: multi-virtualhost 
-    commands:
-      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
-      - docker tag nginx-rp philipsahli/nginx-rp:multi
-      - echo y | docker push philipsahli/nginx-rp:multi
