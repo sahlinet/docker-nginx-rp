@@ -16,14 +16,14 @@ while [ ! x"${!check_var}" == "x" ]; do
         domains=VHOST_${cnt}_DOMAINS
 
         if [ ! -f "/etc/letsencrypt/live/${!servername}/fullchain.pem" ]; then
-            /certbot-master/letsencrypt-auto certonly -a standalone ${TEST_CERT} --standalone-supported-challenges http-01 -d ${!domains} --email ${NOTIFICATION_EMAIL} --agree-tos
-            echo "* ! let's encrypted ... !"
+                /certbot-master/letsencrypt-auto certonly -t -a standalone ${TEST_CERT} --standalone-supported-challenges http-01 -d ${!domains} --email ${NOTIFICATION_EMAIL} --agree-tos
+                echo "* ! let's encrypted ... !"
             else
-            echo "* Certificate does already exist"
-            openssl x509 -in /etc/letsencrypt/live/${!servername}/fullchain.pem -noout -subject
-            openssl x509 -in /etc/letsencrypt/live/${!servername}/fullchain.pem -noout -issuer
-            openssl x509 -in /etc/letsencrypt/live/${!servername}/fullchain.pem -noout -dates
-            openssl x509 -in /etc/letsencrypt/live/${!servername}/fullchain.pem -noout -serial
+                echo "* Certificate does already exist"
+                openssl x509 -in /etc/letsencrypt/live/${!servername}/fullchain.pem -noout -subject
+                openssl x509 -in /etc/letsencrypt/live/${!servername}/fullchain.pem -noout -issuer
+                openssl x509 -in /etc/letsencrypt/live/${!servername}/fullchain.pem -noout -dates
+                openssl x509 -in /etc/letsencrypt/live/${!servername}/fullchain.pem -noout -serial
         fi
     fi
 
