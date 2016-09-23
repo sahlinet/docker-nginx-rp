@@ -60,6 +60,10 @@ http {
             access_log /proc/self/fd/1 upstreamlog;
             error_log /proc/self/fd/2;
 
+            {% if vhost.COOKIEPATH is defined %}
+                proxy_cookie_path {{ vhost.COOKIEPATH }} {{ vhost.COOKIEREPLACEMENT }};
+            {% endif %}
+
             {% include 'locations.tmpl' %}
 
         }
