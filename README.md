@@ -40,7 +40,7 @@ Multimode means that we want to proxy multiple virtualhosts.
         - backend2:backend2
       environment:
         - NOTIFICATION_EMAIL=user@example.com
-      
+
         - VHOST_1_SERVERNAME=test.example.com
         - VHOST_1_SSL=False
         - VHOST_1_PROXYCONF_all_proxy_pass=http://backend1
