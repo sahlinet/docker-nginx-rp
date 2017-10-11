@@ -61,6 +61,11 @@ On Rancher add:
       volumes:
         - /var/certs/`FQQN`:/etc/letsencrypt/
 
+## Insights
+
+`FIX_FRONTEND_PORT` can be used to set a different port to propagate the correct header to backend applications.
+The variable value must be in the form: `:31999`
+
 ## Test
 
     sh test.sh
