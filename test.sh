@@ -27,6 +27,8 @@ export VHOST_1_PROXYCONF_host_location=/host
 #export VHOST_2_PROXYCONF_admin_return=404
 #export VHOST_2_PROXYCONF_admin_location=/b2b2b2
 
+if [ -z "$FIX_FRONTEND_PORT" ]; then export FIX_FRONTEND_PORT=""; fi
+
 #python env2json.py | python -m json.tool
 python env2json.py > env.json
 j2 nginx.tmpl env.json > nginx.conf

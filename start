@@ -4,6 +4,8 @@
 #     https://gist.github.com/renchap/c093702f06df69ba5cac
 # https://eblog.damia.net/2015/12/03/lets-encrypt-automation-on-debian/
 
+if [ -z "$FIX_FRONTEND_PORT" ]; then export FIX_FRONTEND_PORT=""; fi
+
 cnt=1
 echo "****"
 check_var=VHOST_${cnt}_SERVERNAME
