@@ -8,6 +8,7 @@ dependencies:
     - chmod +x $HOME/bin/docker-compose
 test:
   override:
+    - bash test.sh
     - docker build --pull -t nginx-rp .
     - docker images
 deployment:
