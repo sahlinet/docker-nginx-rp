@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 unset VHOST_2_DOMAINS
 unset VHOST_2_SERVERNAME
 unset VHOST_2_SSL
@@ -36,8 +36,7 @@ echo "* Configuration start"
 cat nginx.conf
 echo "* Configuration done"
 
-exit 1
-
+exit 0
 cnt=1
 echo "****"
 check_var=VHOST_${cnt}_SERVERNAME
