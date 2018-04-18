@@ -41,6 +41,7 @@ http {
 
 {% for vhost in vhosts  %}
     {% if vhost.SSL == "True" %}
+        {% set SCHEME = "https" %}
         server {
                 listen 80;
                 server_name {{ vhost.SERVERNAME }};
@@ -73,6 +74,8 @@ http {
                 server_name {{ vhost.SERVERNAME }};
                 access_log /proc/self/fd/1;
                 error_log /proc/self/fd/2;
+
+                {% set SCHEME = "http" %}
                 {% include 'locations.tmpl' %}
         }
 

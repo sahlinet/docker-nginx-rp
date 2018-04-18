@@ -11,7 +11,7 @@
                     {% if FIX_SCHEME is defined %}
                     proxy_set_header X-Forwarded-Proto {{ FIX_SCHEME }};
                     {% else %}
-                    proxy_set_header X-Forwarded-Proto $scheme;
+                    proxy_set_header X-Forwarded-Proto {{ SCHEME }};
                     {% endif %}
                     proxy_set_header X-Forwarded-Host $host{{FIX_FRONTEND_PORT}};
                     # proxy_set_header X-Forwarded-Server $host;

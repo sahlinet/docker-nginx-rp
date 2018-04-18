@@ -18,14 +18,14 @@ export VHOST_1_PROXYCONF_host_proxy_pass=http://aaaa
 export VHOST_1_PROXYCONF_host_no_proxy_header=True
 export VHOST_1_PROXYCONF_host_location=/host
 
-#export VHOST_2_SERVERNAME=b.sahli.net
-#export VHOST_2_SSL=False
-#export VHOST_2_PROXYCONF_home_proxy_pass=http://bbb
-#export VHOST_2_PROXYCONF_home_location=/bbb
-#export VHOST_2_PROXYCONF_static_proxy_pass=http://b2b2b2
-#export VHOST_2_PROXYCONF_static_location=/b2b2b2
-#export VHOST_2_PROXYCONF_admin_return=404
-#export VHOST_2_PROXYCONF_admin_location=/b2b2b2
+export VHOST_2_SERVERNAME=b.sahli.net
+export VHOST_2_SSL=False
+export VHOST_2_PROXYCONF_home_proxy_pass=http://bbb
+export VHOST_2_PROXYCONF_home_location=/bbb
+export VHOST_2_PROXYCONF_static_proxy_pass=http://b2b2b2
+export VHOST_2_PROXYCONF_static_location=/b2b2b2
+export VHOST_2_PROXYCONF_admin_return=404
+export VHOST_2_PROXYCONF_admin_location=/b2b2b2
 
 if [ -z "$FIX_FRONTEND_PORT" ]; then export FIX_FRONTEND_PORT=""; fi
 
